@@ -1,0 +1,38 @@
+.navbar{
+  background: #f2f2f2;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar-header{
+  margin-right: auto;
+}
+
+.navbar-brand{
+  color: #ababab;
+}
+
+.navbar-nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  a{
+    color: #8e8e8e;
+    margin-left: 30px;
+    text-decoration: none;
+    &:hover{
+      color: #000;
+    }
+  }
+  li.active{
+    a{
+      color: #7d7dff;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+<div class="items-top">
+  <div class="items-sort">
+    <button [ngClass]="sortDate == 'Basic' ? 'active' : ''"
+            (click)="onSortItems('Basic')">
+      Basic
+    </button>
+    <button [ngClass]="sortDate == 'Up' ? 'active' : ''"
+            (click)="onSortItems('Up')">
+      Date
+      <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 1L6 6L1 1" stroke="#00406C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button [ngClass]="sortDate == 'Down' ? 'active' : ''"
+            (click)="onSortItems('Down')">
+      Date
+      <svg class="rotate" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 1L6 6L1 1" stroke="#00406C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="items-filter">
+    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15.2443 0C16.2184 0 17 0.806353 17 1.79287V3.10753C17 3.58661 16.8135 4.04575 16.4808 4.38119L10.729 10.213L10.7295 14.6288C10.7295 14.8298 10.6279 15.0149 10.4633 15.1236L10.389 15.1653L6.61238 16.9428C6.21905 17.1279 5.76681 16.841 5.76681 16.4063L5.76656 10.1996L0.4682 4.35727C0.200119 4.06227 0.0386905 3.68526 0.0061273 3.28757L0 3.13759V1.79287C0 0.806353 0.78161 0 1.75574 0H15.2443ZM15.2443 1.186H1.75574C1.44507 1.186 1.18605 1.45322 1.18605 1.79287V3.13759C1.18605 3.29626 1.24377 3.4472 1.34635 3.56009L6.79911 9.57218C6.89805 9.68127 6.95285 9.82328 6.95285 9.97055L6.9526 15.4709L9.54293 14.2525L9.54342 9.97055C9.54342 9.84589 9.58268 9.72523 9.6544 9.62515L9.71417 9.5542L15.6375 3.54726C15.7496 3.43419 15.814 3.27578 15.814 3.10753V1.79287C15.814 1.45322 15.5549 1.186 15.2443 1.186Z" fill="#00406C"/>
+    </svg>
+    <button [ngClass]="filterStatus == 'All' ? 'active' : ''"
+            (click)="onFilterItems('All')">
+      All
+    </button>
+    <button [ngClass]="filterStatus == 'Finished' ? 'active' : ''"
+            (click)="onFilterItems('Finished')">
+      Finished
+    </button>
+    <button [ngClass]="filterStatus == 'In progress' ? 'active' : ''"
+            (click)="onFilterItems('In progress')">
+      In progress
+    </button>
+    <button [ngClass]="filterStatus == 'Fired' ? 'active' : ''"
+            (click)="onFilterItems('Fired')">
+      Fired
+    </button>
+  </div>
+</div>
+<div class="items-list">
+  <app-item *ngFor="let itemEl of items;"
+          [item]="itemEl"
+          >
+  </app-item>
+</div>

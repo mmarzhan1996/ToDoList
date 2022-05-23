@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            id="title"
+            formControlName="title"
+            class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group">
+          <label for="text">Text</label>
+          <textarea
+            type="text"
+            id="text"
+            class="form-control"
+            formControlName="text"
+            rows="6"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group" (click)="picker.open()">
+          <label for="date">Date</label>
+          <input
+            type="text"
+            id="date"
+            formControlName="date"
+            class="form-control"
+            [matDatepicker]="picker"
+
+            >
+            <mat-datepicker #picker></mat-datepicker>
+        </div>
+
+
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!itemForm.valid">Save</button>
+        <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>
+
